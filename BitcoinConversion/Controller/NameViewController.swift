@@ -29,8 +29,8 @@ class NameViewController: UIViewController {
 
     @IBAction func goButtonPressed(_ sender: Any) {
         if nameTextField.text?.isEmpty == false {
-            let name = ""
-            nameTextField.text = name
+            var name = ""
+            name = nameTextField.text ?? ""
             defaults.set(name, forKey: "Name")
             performSegue(withIdentifier: "goToConverter", sender: self)
         } else {

@@ -16,6 +16,7 @@ class SelectorViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var finalURL = ""
     var currencySelected = ""
     var symbolSelected = ""
+    let defaults = UserDefaults.standard
     
     @IBOutlet weak var helloLabel: UILabel!
     @IBOutlet weak var currencyPicker: UIPickerView!
@@ -25,6 +26,13 @@ class SelectorViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
         currencyPicker.delegate = self
         currencyPicker.dataSource = self
+        
+        updateName()
+    }
+    
+    func updateName() {
+        let name = defaults.string(forKey: "Name")
+        helloLabel.text = "Hello, \(name!)"
     }
     
     //Mark: Picker Functions
