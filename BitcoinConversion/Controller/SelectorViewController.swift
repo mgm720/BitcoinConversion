@@ -32,8 +32,9 @@ class SelectorViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func setupUI() {
-        let name = defaults.string(forKey: "Name")
-        helloLabel.text = "Hello, \(name!)"
+        if let name = defaults.string(forKey: "Name") {
+        helloLabel.text = "Hello, \(name)!"
+        }
         
         convertButton.layer.cornerRadius = 20
         convertButton.layer.shadowOffset = CGSize(width: 0, height: 3)

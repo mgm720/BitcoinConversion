@@ -24,10 +24,7 @@ class ResultViewController: UIViewController {
         getBitcoinData(url: searchURL)
     }
     
-    //
-    //    //MARK: - Networking
-    //    /***************************************************************/
-    //
+    //MARK: - Networking
     func getBitcoinData(url: String) {
         
         Alamofire.request(url, method: .get)
@@ -46,14 +43,8 @@ class ResultViewController: UIViewController {
         }
         
     }
-    //
-    //
-    //
-    //
-    //
-    //    //MARK: - JSON Parsing
-    //    /***************************************************************/
-    //
+
+    //MARK: - JSON Parsing
     func updateBitcoinData(json : JSON) {
         
         if let priceResult = json["ask"].double {
