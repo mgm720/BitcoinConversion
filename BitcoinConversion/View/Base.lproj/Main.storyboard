@@ -110,13 +110,40 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoinLogo1000" translatesAutoresizingMaskIntoConstraints="NO" id="JUH-WM-ePn">
+                                <rect key="frame" x="59" y="242" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Kbt-8E-TE4"/>
+                                    <constraint firstAttribute="width" constant="100" id="mvb-qw-GLW"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="foc-dX-qTm">
+                                <rect key="frame" x="167" y="260" width="80" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2ff-Wm-3PZ"/>
+                                    <constraint firstAttribute="width" constant="80" id="Der-tc-f48"/>
+                                </constraints>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Skt-HI-64e">
+                                <rect key="frame" x="255" y="257" width="90" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="bgI-Ox-b9u"/>
+                                    <constraint firstAttribute="height" constant="65" id="l23-kk-zM5"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="foc-dX-qTm" firstAttribute="centerX" secondItem="LDh-uL-p2E" secondAttribute="centerX" id="3Gc-TX-9uT"/>
+                            <constraint firstItem="JUH-WM-ePn" firstAttribute="top" secondItem="7gj-8f-Otb" secondAttribute="bottom" constant="30" id="4Te-UY-tCa"/>
                             <constraint firstItem="4Em-CQ-0KP" firstAttribute="centerX" secondItem="LDh-uL-p2E" secondAttribute="centerX" id="DG8-jC-JOq"/>
                             <constraint firstItem="4Em-CQ-0KP" firstAttribute="top" secondItem="IbJ-ab-9CC" secondAttribute="top" constant="20" id="KFp-sh-KrQ"/>
+                            <constraint firstItem="Skt-HI-64e" firstAttribute="leading" secondItem="foc-dX-qTm" secondAttribute="trailing" constant="8" id="T9g-jQ-UfA"/>
                             <constraint firstItem="7gj-8f-Otb" firstAttribute="centerX" secondItem="LDh-uL-p2E" secondAttribute="centerX" id="b6q-7g-Srs"/>
                             <constraint firstItem="7gj-8f-Otb" firstAttribute="top" secondItem="4Em-CQ-0KP" secondAttribute="bottom" constant="8" id="gKo-Ua-DQf"/>
+                            <constraint firstItem="foc-dX-qTm" firstAttribute="top" secondItem="7gj-8f-Otb" secondAttribute="bottom" constant="48" id="h1K-XR-Uig"/>
+                            <constraint firstItem="foc-dX-qTm" firstAttribute="leading" secondItem="JUH-WM-ePn" secondAttribute="trailing" constant="8" id="lma-2Y-2m6"/>
+                            <constraint firstItem="Skt-HI-64e" firstAttribute="top" secondItem="7gj-8f-Otb" secondAttribute="bottom" constant="45" id="tOg-mq-G6e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IbJ-ab-9CC"/>
                     </view>
@@ -146,6 +173,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow" width="214.55999755859375" height="214.55999755859375"/>
         <image name="bitcoinLogo1000" width="409.09091186523438" height="409.09091186523438"/>
     </resources>
 </document>
