@@ -79,26 +79,69 @@
                     <connections>
                         <outlet property="goButton" destination="Rbx-NZ-nmQ" id="obw-hM-xVn"/>
                         <outlet property="nameTextField" destination="sVZ-D6-MHx" id="Ysa-ao-06i"/>
-                        <segue destination="TwP-iz-5qu" kind="showDetail" identifier="goToConverter" id="pB5-wD-O7W"/>
+                        <segue destination="nJG-Y3-nNS" kind="showDetail" identifier="goToConverter" id="pB5-wD-O7W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Bitcoin Conversion-->
         <scene sceneID="26e-IU-pWn">
             <objects>
                 <viewController id="TwP-iz-5qu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LDh-uL-p2E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, (name)!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Em-CQ-0KP">
+                                <rect key="frame" x="117.5" y="108" width="179" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Select a currency to see it's conversion rate to Bitcoin" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7gj-8f-Otb">
+                                <rect key="frame" x="87" y="152" width="240" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="QRT-h2-kHl"/>
+                                    <constraint firstAttribute="height" constant="60" id="sag-nt-omX"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Em-CQ-0KP" firstAttribute="centerX" secondItem="LDh-uL-p2E" secondAttribute="centerX" id="DG8-jC-JOq"/>
+                            <constraint firstItem="4Em-CQ-0KP" firstAttribute="top" secondItem="IbJ-ab-9CC" secondAttribute="top" constant="20" id="KFp-sh-KrQ"/>
+                            <constraint firstItem="7gj-8f-Otb" firstAttribute="centerX" secondItem="LDh-uL-p2E" secondAttribute="centerX" id="b6q-7g-Srs"/>
+                            <constraint firstItem="7gj-8f-Otb" firstAttribute="top" secondItem="4Em-CQ-0KP" secondAttribute="bottom" constant="8" id="gKo-Ua-DQf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="IbJ-ab-9CC"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Bitcoin Conversion" id="Ckw-5U-hWH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DX1-aC-wpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875" y="19"/>
+            <point key="canvasLocation" x="1784.057971014493" y="18.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fSg-Am-efh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nJG-Y3-nNS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N0A-ww-P9q">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TwP-iz-5qu" kind="relationship" relationship="rootViewController" id="cgc-Kc-l2z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KNP-Q5-ZSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873.91304347826099" y="18.75"/>
         </scene>
     </scenes>
     <resources>
