@@ -89,7 +89,7 @@
         <!--Bitcoin Conversion-->
         <scene sceneID="26e-IU-pWn">
             <objects>
-                <viewController id="TwP-iz-5qu" sceneMemberID="viewController">
+                <viewController id="TwP-iz-5qu" customClass="SelectorViewController" customModule="BitcoinConversion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LDh-uL-p2E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,6 +148,10 @@
                         <viewLayoutGuide key="safeArea" id="IbJ-ab-9CC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bitcoin Conversion" id="Ckw-5U-hWH"/>
+                    <connections>
+                        <outlet property="currencyPicker" destination="Skt-HI-64e" id="xbt-1a-YgW"/>
+                        <outlet property="helloLabel" destination="4Em-CQ-0KP" id="Q66-4F-x57"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DX1-aC-wpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
