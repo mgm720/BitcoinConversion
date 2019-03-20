@@ -51,8 +51,9 @@ class SelectorViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return currencyArray.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return currencyArray[row]
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: currencyArray[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        return attributedString
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
