@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="-20" y="19"/>
         </scene>
-        <!--Bitcoin Conversion-->
+        <!--Select Currency-->
         <scene sceneID="26e-IU-pWn">
             <objects>
                 <viewController id="TwP-iz-5qu" customClass="SelectorViewController" customModule="BitcoinConversion" customModuleProvider="target" sceneMemberID="viewController">
@@ -147,15 +147,71 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IbJ-ab-9CC"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Bitcoin Conversion" id="Ckw-5U-hWH"/>
+                    <navigationItem key="navigationItem" title="Select Currency" id="Ckw-5U-hWH"/>
                     <connections>
                         <outlet property="currencyPicker" destination="Skt-HI-64e" id="xbt-1a-YgW"/>
                         <outlet property="helloLabel" destination="4Em-CQ-0KP" id="Q66-4F-x57"/>
+                        <segue destination="WvN-f2-4e4" kind="show" id="OAH-dE-RTC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DX1-aC-wpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1784.057971014493" y="18.75"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="P8P-Lf-bpM">
+            <objects>
+                <viewController id="WvN-f2-4e4" customClass="ResultViewController" customModule="BitcoinConversion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PFV-1g-5jf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaw-ah-BTc">
+                                <rect key="frame" x="168.5" y="118" width="77" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7c-X1-OJi">
+                                <rect key="frame" x="198.5" y="169" width="17" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$32414 USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mX-5I-WPU">
+                                <rect key="frame" x="121.5" y="216" width="171" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoinLogo1000" translatesAutoresizingMaskIntoConstraints="NO" id="gwn-Mk-bg6">
+                                <rect key="frame" x="87" y="287" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="JDm-HM-oBj"/>
+                                    <constraint firstAttribute="width" constant="240" id="c06-OS-o0A"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qaw-ah-BTc" firstAttribute="centerX" secondItem="PFV-1g-5jf" secondAttribute="centerX" id="5We-ym-mfh"/>
+                            <constraint firstItem="p7c-X1-OJi" firstAttribute="top" secondItem="qaw-ah-BTc" secondAttribute="bottom" constant="15" id="FW5-st-Jkr"/>
+                            <constraint firstItem="p7c-X1-OJi" firstAttribute="centerX" secondItem="PFV-1g-5jf" secondAttribute="centerX" id="GIP-kw-QRY"/>
+                            <constraint firstItem="qaw-ah-BTc" firstAttribute="top" secondItem="nJ8-Jd-5HN" secondAttribute="top" constant="30" id="Llh-SU-4n9"/>
+                            <constraint firstItem="3mX-5I-WPU" firstAttribute="centerX" secondItem="PFV-1g-5jf" secondAttribute="centerX" id="MiI-EU-HWT"/>
+                            <constraint firstItem="gwn-Mk-bg6" firstAttribute="top" secondItem="3mX-5I-WPU" secondAttribute="bottom" constant="35" id="SJE-45-Kwp"/>
+                            <constraint firstItem="3mX-5I-WPU" firstAttribute="top" secondItem="p7c-X1-OJi" secondAttribute="bottom" constant="15" id="eoj-8t-568"/>
+                            <constraint firstItem="gwn-Mk-bg6" firstAttribute="centerX" secondItem="PFV-1g-5jf" secondAttribute="centerX" id="vHL-Nf-vJI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nJ8-Jd-5HN"/>
+                    </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="3mX-5I-WPU" id="Tb4-fP-AaT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CIq-ia-uaa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2701" y="19"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fSg-Am-efh">
