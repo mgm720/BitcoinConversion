@@ -79,10 +79,26 @@
                     <connections>
                         <outlet property="goButton" destination="Rbx-NZ-nmQ" id="obw-hM-xVn"/>
                         <outlet property="nameTextField" destination="sVZ-D6-MHx" id="Ysa-ao-06i"/>
+                        <segue destination="TwP-iz-5qu" kind="showDetail" identifier="goToConverter" id="pB5-wD-O7W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="26e-IU-pWn">
+            <objects>
+                <viewController id="TwP-iz-5qu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LDh-uL-p2E">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="IbJ-ab-9CC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DX1-aC-wpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="875" y="19"/>
         </scene>
     </scenes>
     <resources>

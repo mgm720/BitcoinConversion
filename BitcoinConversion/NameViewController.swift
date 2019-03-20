@@ -10,6 +10,8 @@ import UIKit
 
 class NameViewController: UIViewController {
     
+    let defaults = UserDefaults.standard
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var goButton: UIButton!
 
@@ -26,7 +28,18 @@ class NameViewController: UIViewController {
     }
 
     @IBAction func goButtonPressed(_ sender: Any) {
-        
+        if nameTextField.text?.isEmpty == false {
+            let name = ""
+            nameTextField.text = name
+            defaults.set(name, forKey: "Name")
+            performSegue(withIdentifier: "goToConverter", sender: self)
+        } else {
+            let alert = UIAlertController(title: "Missing Name", message: "Please input a name.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                print("No Name Input")
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
