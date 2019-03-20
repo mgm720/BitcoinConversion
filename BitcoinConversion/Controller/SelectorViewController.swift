@@ -13,13 +13,14 @@ class SelectorViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     let baseURL = "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTC"
     let currencyArray = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"]
     let symbolArray = ["$", "R$", "$", "¥", "€", "£", "$", "Rp", "₪", "₹", "¥", "$", "kr", "$", "zł", "lei", "₽", "kr", "$", "$", "R"]
-    var finalURL = ""
-    var currencySelected = ""
-    var symbolSelected = ""
+    var finalURL = "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCAUD"
+    var currencySelected = "AUD"
+    var symbolSelected = "$"
     let defaults = UserDefaults.standard
     
     @IBOutlet weak var helloLabel: UILabel!
     @IBOutlet weak var currencyPicker: UIPickerView!
+    @IBOutlet weak var convertButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +28,17 @@ class SelectorViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         currencyPicker.delegate = self
         currencyPicker.dataSource = self
         
-        updateName()
+        setupUI()
     }
     
-    func updateName() {
+    func setupUI() {
         let name = defaults.string(forKey: "Name")
         helloLabel.text = "Hello, \(name!)"
+        
+        convertButton.layer.cornerRadius = 20
+        convertButton.layer.shadowOffset = CGSize(width: 0, height: 3)
+        convertButton.layer.shadowOpacity = 0.75
+        convertButton.layer.masksToBounds = false
     }
     
     //Mark: Picker Functions
@@ -56,6 +62,11 @@ class SelectorViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
 
     // MARK: - Navigation
+    @IBAction func convertButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "goToResult", sender: self)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! ResultViewController
         

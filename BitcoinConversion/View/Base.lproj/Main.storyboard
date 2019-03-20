@@ -131,9 +131,25 @@
                                     <constraint firstAttribute="height" constant="65" id="l23-kk-zM5"/>
                                 </constraints>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZp-sA-lAw">
+                                <rect key="frame" x="107" y="370" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.96847993139999999" green="0.5944903493" blue="0.14529424909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="U7J-KE-TKC"/>
+                                    <constraint firstAttribute="height" constant="50" id="pbW-XP-rFZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="See Result">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="convertButtonPressed:" destination="TwP-iz-5qu" eventType="touchUpInside" id="Ojq-d6-tpv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="rZp-sA-lAw" firstAttribute="centerX" secondItem="LDh-uL-p2E" secondAttribute="centerX" id="1wz-gX-0qa"/>
                             <constraint firstItem="foc-dX-qTm" firstAttribute="centerX" secondItem="LDh-uL-p2E" secondAttribute="centerX" id="3Gc-TX-9uT"/>
                             <constraint firstItem="JUH-WM-ePn" firstAttribute="top" secondItem="7gj-8f-Otb" secondAttribute="bottom" constant="30" id="4Te-UY-tCa"/>
                             <constraint firstItem="4Em-CQ-0KP" firstAttribute="centerX" secondItem="LDh-uL-p2E" secondAttribute="centerX" id="DG8-jC-JOq"/>
@@ -142,6 +158,7 @@
                             <constraint firstItem="7gj-8f-Otb" firstAttribute="centerX" secondItem="LDh-uL-p2E" secondAttribute="centerX" id="b6q-7g-Srs"/>
                             <constraint firstItem="7gj-8f-Otb" firstAttribute="top" secondItem="4Em-CQ-0KP" secondAttribute="bottom" constant="8" id="gKo-Ua-DQf"/>
                             <constraint firstItem="foc-dX-qTm" firstAttribute="top" secondItem="7gj-8f-Otb" secondAttribute="bottom" constant="48" id="h1K-XR-Uig"/>
+                            <constraint firstItem="rZp-sA-lAw" firstAttribute="top" secondItem="foc-dX-qTm" secondAttribute="bottom" constant="50" id="ju8-38-cyT"/>
                             <constraint firstItem="foc-dX-qTm" firstAttribute="leading" secondItem="JUH-WM-ePn" secondAttribute="trailing" constant="8" id="lma-2Y-2m6"/>
                             <constraint firstItem="Skt-HI-64e" firstAttribute="top" secondItem="7gj-8f-Otb" secondAttribute="bottom" constant="45" id="tOg-mq-G6e"/>
                         </constraints>
@@ -149,9 +166,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Select Currency" id="Ckw-5U-hWH"/>
                     <connections>
+                        <outlet property="convertButton" destination="rZp-sA-lAw" id="P1s-EM-JsY"/>
                         <outlet property="currencyPicker" destination="Skt-HI-64e" id="xbt-1a-YgW"/>
                         <outlet property="helloLabel" destination="4Em-CQ-0KP" id="Q66-4F-x57"/>
-                        <segue destination="WvN-f2-4e4" kind="show" id="OAH-dE-RTC"/>
+                        <segue destination="WvN-f2-4e4" kind="show" identifier="goToResult" id="OAH-dE-RTC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DX1-aC-wpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,14 +196,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$32414 USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mX-5I-WPU">
-                                <rect key="frame" x="121.5" y="216" width="171" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mX-5I-WPU">
+                                <rect key="frame" x="207" y="216" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoinLogo1000" translatesAutoresizingMaskIntoConstraints="NO" id="gwn-Mk-bg6">
-                                <rect key="frame" x="87" y="287" width="240" height="240"/>
+                                <rect key="frame" x="87" y="251" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="JDm-HM-oBj"/>
                                     <constraint firstAttribute="width" constant="240" id="c06-OS-o0A"/>
